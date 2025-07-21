@@ -1,0 +1,125 @@
+:root {
+  --dark-color: #1e1e1e;
+  --light-color: #f9f9f9;
+  --medium-color: #aaa;
+  --border-color: #ccc;
+  --main-color: #0066ff;
+  --error-color: #ff4d4f;
+  --border-radius: 8px;
+  --input-bg: #f1f1f1;
+  --focus-color: #3399ff;
+  --transition: 0.3s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--dark-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--light-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form {
+  padding: 30px;
+  background: #fff;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: box-shadow var(--transition);
+}
+
+.form:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form h2 {
+  padding: 10px 0 30px;
+  text-align: center;
+  color: var(--dark-color);
+  font-size: 24px;
+}
+
+.form .form-fields {
+  margin: 0 0 20px;
+}
+
+.form label {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+::placeholder {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.form input[type] {
+  width: 100%;
+  background-color: var(--input-bg);
+  border: 1px solid var(--border-color);
+  font-size: 16px;
+  padding: 10px 12px;
+  border-radius: var(--border-radius);
+  transition: border var(--transition), background-color var(--transition);
+}
+
+.form input[type]:focus {
+  border-color: var(--focus-color);
+  background-color: #fff;
+}
+
+.form button {
+  border: none;
+  background: var(--main-color);
+  padding: 12px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--light-color);
+  font-size: 16px;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition), transform var(--transition);
+  width: 100%;
+}
+
+.form button:hover {
+  background-color: #0052cc;
+  transform: scale(1.02);
+}
+
+.form .error-message {
+  font-size: 11px;
+  padding: 6px 0;
+  color: var(--error-color);
+  font-style: italic;
+  display: none;
+}
+
+.form .show-error-message .error-message {
+  display: block;
+}
+
+.form .show-error-message input[type] {
+  border-color: var(--error-color);
+}
